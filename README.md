@@ -4,3 +4,4 @@ Collecting and cleaning data for downstream analysis and sharing.
 The goal of this project is to prepare a tidy data that can be used for later analysis. 
 The work was done by a R scritp to convert raw data into Tidy data set.
 
+![alt tag](https://raw.github.com/username/projectname/branch/path/to/tidy.png)
