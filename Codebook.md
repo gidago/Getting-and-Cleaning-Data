@@ -7,15 +7,16 @@
 | Variable  | name  | value/units |
 | :----: |:----------| :---------------------------------------------------------|
 | (1)    | subject   | identifier of the volunteer who carried out the experiment|
-| (2)    | activity  |   1. WALKING|
-|        |           |   2. WALKING_UPSTAIRS|
-|        |           |   3. WALKING_DOWNSTAIRS|
-|        |           |   4. SITTING|
-|        |           |   5. STANDING|
-|        |           |   6. LAYING |
+| (2)    | activity  |   1. WALKING                                              |
+|        |           |   2. WALKING_UPSTAIRS                                     |
+|        |           |   3. WALKING_DOWNSTAIRS                                   |
+|        |           |   4. SITTING                                              |
+|        |           |   5. STANDING                                             |
+|        |           |   6. LAYING                                               |
+|        |           |                                                          |
 | (561)  | features  | feature vector with time and frequency domain variables  |
-|        |           |See: UCI HAR Dataset|
-|        |           |features_info.txt|
+|        |           |See: UCI HAR Dataset (features_info.txt)                  |
+|        |           |                                                          |
 | [1] | tBodyAcc-mean()-X  |  | 
 | [2] | tBodyAcc-mean()-Y  |  | 
 | [3] | tBodyAcc-mean()-Z  |  | 
