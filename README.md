@@ -36,7 +36,7 @@ The script, `run_analysis.R`, does the following,
 * Merges the three `test` and three `train` files into a single data table, setting textual columns heading where possible
 * Creates a smaller second dataset, containing only mean and std variables
 * Computes the means of this secondary dataset, group by subject/activity.
-* Saves this last dataset to `./data/tidy_data.txt`
+* Saves this last dataset to `./data/tidyData.txt`
 
 ### Loading Data
 
