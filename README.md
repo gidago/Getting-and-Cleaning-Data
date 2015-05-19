@@ -29,7 +29,14 @@ Here are the data for the project:
 
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
-## Steps
+## Steps (instruction list)
+The script, `run_analysis.R`, does the following,
+
+* Load the various files which make-up the UCI dataset
+* Merges the three `test` and three `train` files into a single data table, setting textual columns heading where possible
+* Creates a smaller second dataset, containing only mean and std variables
+* Computes the means of this secondary dataset, group by subject/activity.
+* Saves this last dataset to `./data/tidy_data.txt`
 
 ### Loading Data
 
