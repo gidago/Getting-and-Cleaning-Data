@@ -150,7 +150,7 @@ activityMeans <- summarise_each(activities, funs(mean))
 
 
 # Write the tidy data set created to an output file
-write.table(activityMeans, './tidyData.txt',row.names=TRUE,sep='\t');
+write.table(activityMeans, './tidyData.txt',row.names=FALSE,sep='\t');
 
 
 ## remove old data sets from memory
