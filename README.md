@@ -8,7 +8,7 @@ The work was done by a R scritp (run_analysis.R) to convert raw data into Tidy d
 
 This project tries to follow the guidelines given in  [“How to share data with a statistician”](https://github.com/jtleek/datasharing)
 
-## The raw data (Data Source)
+## The raw data (data source)
 
 The data linked to from the course website represent data collected from the accelerometers from the Samsung Galaxy S smartphone. A full description is available at the site where the data was obtained:
 
@@ -18,6 +18,17 @@ Here are the data for the project:
 
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
+## Script  run_analysis.R 
+The script that does the following. 
+
+ 1.  Merges the training and the test sets to create one data set.
+ 2.  Extracts only the measurements on the mean and standard deviation for each measurement. 
+ 3.  Uses descriptive activity names to name the activities in the data set
+ 4.  Appropriately labels the data set with descriptive variable names. 
+ 5.  From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+
+
+
 
 | Left-Aligned  | Center Aligned  | Right Aligned |
 | :------------ |:---------------:| -----:|
@@ -26,4 +37,10 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 | zebra stripes | are neat        |    $1 |
 
 
+## Project files
+
++ README.md
++ run_analysis.R
++ Codebook.md 
++ tidyData.txt
 
