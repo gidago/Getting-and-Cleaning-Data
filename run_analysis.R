@@ -5,7 +5,10 @@
 #
 #
 # Setting working directory, downloading and unzipping datafile
-
+setwd("xxxx")
+fileUrl<-"xxxxxxx"
+download.file(fileUrl,destfile="./temp.zip", method="curl")
+unzip("temp.zip", files = NULL, list = FALSE, overwrite = TRUE, junkpaths = FALSE, exdir ="./", unzip = "internal", setTimes = FALSE)
 
 # Data paths
 
