@@ -29,6 +29,21 @@ Here are the data for the project:
 
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
+## Steps
+
+### Loading Data
+
+### Merge the training and the test sets
+
+### Extracting Data
+
+### Name with Descriptive activity names
+
+### Labelling data set with descriptive variable names
+
+### Getting Tidy Data 
+
+
 ## Script  run_analysis.R 
 The script that does the following. 
 
