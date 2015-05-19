@@ -5,8 +5,8 @@
 #
 #
 # Setting working directory, downloading and unzipping datafile
-setwd("xxxx")
-fileUrl<-"xxxxxxx"
+#setwd("xxxx")
+fileUrl<-"https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 download.file(fileUrl,destfile="./temp.zip", method="curl")
 unzip("temp.zip", files = NULL, list = FALSE, overwrite = TRUE, junkpaths = FALSE, exdir ="./", unzip = "internal", setTimes = FALSE)
 
