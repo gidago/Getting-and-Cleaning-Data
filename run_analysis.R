@@ -4,13 +4,16 @@
 #
 #
 #
+# Setting working directory, downloading and unzipping datafile
+
+
 # Data paths
 
 # Merge the training and the test sets to create one data set.
 
 # Assign column names to the merged data
 
-# Extract only the measurements on the mean and standard deviation for each measurement.
+# Extracting the measurements on the mean and standard deviation for each measurement
 
 # Use descriptive activity names to name the activities in the data set.
 
