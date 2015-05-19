@@ -63,8 +63,15 @@ The script that does the following.
 
 
 
+## The tidy data 
 
+The final data frame `meanAndStdAverages` looks like this:
 
+ 
+      Activity Subject tBodyAcc.mean...X tBodyAcc.mean...Y tBodyAcc.mean...Z
+    1  WALKING       1         0.2773308       -0.01738382        -0.1111481
+    2  WALKING       2         0.2764266       -0.01859492        -0.1055004
+    3  WALKING       3         0.2755675       -0.01717678        -0.1126749
 
 
 
