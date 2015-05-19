@@ -10,6 +10,12 @@ fileUrl<-"xxxxxxx"
 download.file(fileUrl,destfile="./temp.zip", method="curl")
 unzip("temp.zip", files = NULL, list = FALSE, overwrite = TRUE, junkpaths = FALSE, exdir ="./", unzip = "internal", setTimes = FALSE)
 
+if(!file.exists("data")) {
+    dir.create("data")
+} else {
+    print("ya existe")
+}
+
 # Data paths
 
 # Merge the training and the test sets to create one data set.
