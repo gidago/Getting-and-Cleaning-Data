@@ -28,19 +28,19 @@ The script that does the following.
  5.  From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 
-
-
-| Left-Aligned  | Center Aligned  | Right Aligned |
-| :------------ |:---------------:| -----:|
-| col 3 is      | some wordy text | $1600 |
-| col 2 is      | centered        |   $12 |
-| zebra stripes | are neat        |    $1 |
-
-
 ## Project files
 
-+ README.md
-+ run_analysis.R
-+ Codebook.md 
-+ tidyData.txt
+|  | File  | Use |
+|:-:|:--------       | -----:   |
+| 1 | README.md      |This text |
+| 2 | run_analysis.R |Script   |
+| 3 | Codebook.md    |Variables description |
+| 4 | tidyData.txt   |Result file |
+
+
+
+
+
+
+
 
