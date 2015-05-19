@@ -8,6 +8,17 @@ The work was done by a R scritp (run_analysis.R) to convert raw data into Tidy d
 
 This project tries to follow the guidelines given in  [“How to share data with a statistician”](https://github.com/jtleek/datasharing)
 
+
+## Project files
+
+|  | File  | Use |
+|:-:|:--------       | -----:   |
+| 1 | README.md      |This text |
+| 2 | run_analysis.R |Script   |
+| 3 | Codebook.md    |Variables description |
+| 4 | tidyData.txt   |Result file |
+
+
 ## The raw data (data source)
 
 The data linked to from the course website represent data collected from the accelerometers from the Samsung Galaxy S smartphone. A full description is available at the site where the data was obtained:
@@ -27,15 +38,6 @@ The script that does the following.
  4.  Appropriately labels the data set with descriptive variable names. 
  5.  From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-
-## Project files
-
-|  | File  | Use |
-|:-:|:--------       | -----:   |
-| 1 | README.md      |This text |
-| 2 | run_analysis.R |Script   |
-| 3 | Codebook.md    |Variables description |
-| 4 | tidyData.txt   |Result file |
 
 
 
