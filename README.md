@@ -14,11 +14,8 @@ This project tries to follow the guidelines given in  [“How to share data with
 |:-:|:--------       | -----:   |
 | 1 | README.md      |This text |
 | 2 | [run_analysis.R](https://github.com/gidago/Getting-and-Cleaning-Data/blob/master/run_analysis.R) |Script   |
-| 3 | Codebook.md    |Variables description |
+| 3 | [Codebook.md](https://github.com/gidago/Getting-and-Cleaning-Data/blob/master/Codebook.md) |Variables description |
 | 4 | tidyData.txt   |Result file |
-
-Getting-and-Cleaning-Data/run_analysis.R
-(https://github.com/gidago/Getting-and-Cleaning-Data/blob/master/run_analysis.R)
 
 ## The raw data (data source)
 The data linked to from the course website represent data collected from the accelerometers from the Samsung Galaxy S smartphone. A full description is available at the site where the data was obtained:
@@ -71,11 +68,10 @@ The script that does the following.
 
 The final data frame `meanAndStdAverages` looks like this:
 
- 
       Activity Subject tBodyAcc.mean...X tBodyAcc.mean...Y tBodyAcc.mean...Z
     1  WALKING       1         0.2773308       -0.01738382        -0.1111481
     2  WALKING       2         0.2764266       -0.01859492        -0.1055004
     3  WALKING       3         0.2755675       -0.01717678        -0.1126749
 
-
+This data frame is saved without headers to tidyData.txt
 
