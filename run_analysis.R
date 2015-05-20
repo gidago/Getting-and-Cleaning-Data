@@ -10,7 +10,8 @@
 #          - Features  
 #          - Activity labels
 #    3.- Merge train and test worktables to create a single data set
-#
+#    === Operate ===
+#    4.- Assign column names to the merged data
 
 #
 # Load libraries
@@ -50,14 +51,18 @@ print ("Merging the test and train data sets")
 test.data <- cbind(test.y, Subject_test, test.x)
 train.data  <- cbind(Subject_train, train.y, train.x) # "activity" is a KEY
 dataAll <- rbind(test.data, train.data)
-rm(test.data, train.data) 
 
-# Assign column names to the merged data
-# Merge data, extract mean, std of measurements, 
-# and label variable names based on descriptive variable names
 X <- rbind(train.x, test.x)
 y <- rbind(train.y, test.y)
 subject_id <- rbind(Subject_train, Subject_test)
+
+# free memory
+rm(test.data, train.data)  
+#------------------------------------------------------------------#
+#    4. Assign column names to the merged data
+#------------------------------------------------------------------#
+# Merge data, extract mean, std of measurements, 
+# and label variable names based on descriptive variable names
 
 #feature <- as.character(featurenames[[2]])
 feature <- as.character(features[[2]])
