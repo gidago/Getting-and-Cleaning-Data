@@ -26,7 +26,8 @@
 # Load libraries
 library(data.table)
 
-run_analysis <- function (pathToUciHarDataset){
+run_analysis <- function (){
+#pathToUciHarDataset
 ##test <- read.table(paste(pathToUciHarDataset,"/test/X_test.txt", sep=""))
 # Setting working directory
 #setwd("xxxx")
