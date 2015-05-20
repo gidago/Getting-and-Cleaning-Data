@@ -25,6 +25,9 @@
 #
 # Load libraries
 library(data.table)
+
+run_analysis <- function (pathToUciHarDataset){
+##test <- read.table(paste(pathToUciHarDataset,"/test/X_test.txt", sep=""))
 # Setting working directory
 #setwd("xxxx")
 #------------------------------------------------------------------#
@@ -64,24 +67,24 @@ print ("Merging the x and y data sets")
 ##dataAll <- rbind(train.data, test.data)
 X          <- rbind(train.x, test.x)
 y          <- rbind(train.y, test.y)
-
+#
 subject_id <- rbind(train.subject, test.subject)
-
 # free memory
+## remove old data sets from memory
 rm(train.x, test.x, train.y, test.y, train.subject, test.subject) 
-
 #------------------------------------------------------------------#
 #    4. Assign column names to the merged data
 #------------------------------------------------------------------#
 feature <- as.character(feature.names[[2]])
-feature <- gsub("\\(|)","",feature)
-feature <- gsub("-", "_",feature)
+#???
+#feature <- gsub("\\(|)","",feature)
+#feature <- gsub("-", "_",feature)
 colnames(X) <- feature
 #------------------------------------------------------------------#
 #    5.- From merge data, extract mean, std of measurements
 #------------------------------------------------------------------#
 # Merge data, extract mean, std of measurements, 
-#Select (filter) columns that contents mean or std
+# Select (filter) columns that contents mean or std
 # Extracting the measurements on the mean and standard deviation for each measurement
 ind <- grep('mean|std', feature)    ## 86 features
 X_sel <- X[,ind]
@@ -105,6 +108,10 @@ colNames  = colnames(HARdata);
 # Cleaning up the variable names to make them more descriptive
 for (i in 1:length(colNames)) 
 {
+#???
+colNames[i] = gsub("\\(|)","",colNames[i])
+colNames[i] = gsub("-", "_",colNames[i])
+#???
   colNames[i] = gsub("\\()","",colNames[i])        # quitar parentesis
   colNames[i] = gsub("-std$","StdDev",colNames[i])
   colNames[i] = gsub("-mean","Mean",colNames[i])
@@ -147,32 +154,26 @@ activityMeans <- summarise_each(activities, funs(mean))
 #------------------------------------------------------------------#
 # Write the tidy data set created to an output file
 write.table(activityMeans, './tidyData.txt',row.names=FALSE,sep='\t');
-
-
-
-
 ## remove old data sets from memory
 #rm(testData)
 #rm(trainData)
 ########### 
 # dplyr approach: create a table grouped by Dest, and then summarise each group by taking the mean of ArrDelay
-flights %>%
-    group_by(Dest) %>%
-    summarise(avg_delay = mean(ArrDelay, na.rm=TRUE))
-    
+#flights %>%
+#    group_by(Dest) %>%
+#    summarise(avg_delay = mean(ArrDelay, na.rm=TRUE))
+#    
 # 1 aprox    
-    activityMeans %>%
-      group_by(activities) %>%
-      summarise_each(funs(mean))
-      
+#    activityMeans %>%
+#      group_by(activities) %>%
+#      summarise_each(funs(mean))
+#      
 # for each carrier, calculate the percentage of flights cancelled or diverted
-flights %>%
-    group_by(UniqueCarrier) %>%
-    summarise_each(funs(mean), Cancelled, Diverted)   
-    
-    
-    # summarise with group_by:
-head(summarise(group_by(mammals, order),
-  mean_mass = mean(adult_body_mass_g, na.rm = TRUE)))
-
-    
+#flights %>%
+#    group_by(UniqueCarrier) %>%
+#    summarise_each(funs(mean), Cancelled, Diverted)   
+#    
+# summarise with group_by:
+#head(summarise(group_by(mammals, order),
+#  mean_mass = mean(adult_body_mass_g, na.rm = TRUE)))
+}  
