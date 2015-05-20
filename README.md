@@ -57,7 +57,7 @@ To execute this script in RStudio type in the console: source("run_analysis.R")
 
 ## The tidy data 
 
-The final data frame `meanAndStdAverages` looks like this:
+The final data frame `activityMeans` looks like this:
 
       Activity Subject tBodyAcc.mean...X tBodyAcc.mean...Y tBodyAcc.mean...Z
     1  WALKING       1         0.2773308       -0.01738382        -0.1111481
