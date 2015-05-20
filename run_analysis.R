@@ -44,48 +44,47 @@ test.y<-read.table("./UCI HAR Dataset/test/y_test.txt",header = FALSE)
 test.subject<-read.table("./UCI HAR Dataset/test/subject_test.txt",header = FALSE)
 
 print("Reading features and activity labels")
-activity_lables<-read.table("./UCI HAR Dataset/activity_labels.txt",header = FALSE)
-features<-read.table("./UCI HAR Dataset/features.txt",header = FALSE)
+activity.labels<-read.table("./UCI HAR Dataset/activity_labels.txt",header = FALSE)
+feature.names<-read.table("./UCI HAR Dataset/features.txt",header = FALSE)
 #------------------------------------------------------------------#
 ##  3. Merge train and test worktables to create a single data set
 #------------------------------------------------------------------#
 print ("Merging the test and train data sets")
 train.data  <- cbind(train.subject, train.y, train.x) # "activity" is a KEY
-test.data <- cbind(test.y, test.subject, test.x)
+test.data   <- cbind(test.subject,  test.y , test.x)
 
-dataAll <- rbind(test.data, train.data)
+dataAll <- rbind(train.data, test.data)
 
-X <- rbind(train.x, test.x)
-y <- rbind(train.y, test.y)
+X          <- rbind(train.x, test.x)
+y          <- rbind(train.y, test.y)
 subject_id <- rbind(train.subject, test.subject)
 
 # free memory
-rm(test.data, train.data)  
+rm(test.data, train.data) 
+
+feature <- as.character(feature.names[[2]])
+feature <- gsub("\\(|)","",feature)
+feature <- gsub("-", "_",feature)
+
 #------------------------------------------------------------------#
 #    4. Assign column names to the merged data
 #------------------------------------------------------------------#
 # Merge data, extract mean, std of measurements, 
-# and label variable names based on descriptive variable names
-
-#feature <- as.character(featurenames[[2]])
-feature <- as.character(features[[2]])
-feature <- gsub("\\(|)","",feature)
-feature <- gsub("-", "_",feature)
 colnames(X) <- feature
-
+#Select (filter) columns that contents mean or std
 ind <- grep('mean|std', feature)
 X_sel <- X[,ind]
 
-
 ###### dplyr  ej.: select(mammals, contains("body"))
 
-
+# and label variable names based on descriptive variable names
 HARdata <- cbind(subject_id, y, X_sel)
+
 colnames(HARdata)[1]  <- 'subjectID'
 colnames(HARdata)[2] <- 'activity'
 
-HARdata$activity <- factor(HARdata$activity, levels=activity_lables[[1]],
-                           labels=as.character(activity_lables[[2]]))
+HARdata$activity <- factor(HARdata$activity, levels=activity_labels[[1]],
+                           labels=as.character(activity_labels[[2]]))
 
 # Extracting the measurements on the mean and standard deviation for each measurement
 # Use descriptive activity names to name the activities in the data set.
@@ -95,10 +94,10 @@ colNames  = colnames(HARdata);
 # Cleaning up the variable names to make them more descriptive
 for (i in 1:length(colNames)) 
 {
-  colNames[i] = gsub("\\()","",colNames[i])
+  colNames[i] = gsub("\\()","",colNames[i])        # quitar parentesis
   colNames[i] = gsub("-std$","StdDev",colNames[i])
   colNames[i] = gsub("-mean","Mean",colNames[i])
-  colNames[i] = gsub("^(t)","time",colNames[i])
+  colNames[i] = gsub("^(t)","time",colNames[i])   # sustituir tXXXXXX - time
   colNames[i] = gsub("^(f)","freq",colNames[i])
   colNames[i] = gsub("([Gg]ravity)","Gravity",colNames[i])
   colNames[i] = gsub("([Bb]ody[Bb]ody|[Bb]ody)","Body",colNames[i])
