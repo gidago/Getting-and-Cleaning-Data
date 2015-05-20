@@ -53,6 +53,8 @@ Getting Tidy Data
 
 All these actions are programmed in the script [run_analysis.R](https://github.com/gidago/Getting-and-Cleaning-Data/blob/master/run_analysis.R).
 
+To execute this script in RStudio type in the console: source("run_analysis.R")
+
 ## The tidy data 
 
 The final data frame `meanAndStdAverages` looks like this:
