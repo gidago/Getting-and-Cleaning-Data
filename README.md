@@ -29,7 +29,7 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 ## Steps (instruction list)
 
 
-
+ 
 
 The script, `run_analysis.R`, does the following,
 
@@ -39,18 +39,27 @@ The script, `run_analysis.R`, does the following,
 * Computes the means of this secondary dataset, group by subject/activity.
 * Saves this last dataset to `./data/tidyData.txt`
 
-### Loading Data
+#### - Loading Data
+If we verified that there is no "UCI HAR Dataset" directory, download and decompress the data.
+By `download.file` from  https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip, and then `unzip` the downloaded data.
 
-### Merge the training and the test sets
+#### - Generate worktables
+Extracting Data
+ - Train data
+ - Test data
+ - Features
+ - Activity labels
+#### - Merge worktables to create a single data set
+ Merge the training and the test sets
 
-### Extracting Data
+####- Assign column names to the merged data
+####- From merge data, extract mean, std of measurements
+####- Label the data set with descriptive variable names
+Name with Descriptive activity names
+Labelling data set with descriptive variable names
 
-### Name with Descriptive activity names
-
-### Labelling data set with descriptive variable names
-
-### Getting Tidy Data 
-
+####- Write the tidy data set created to an output file
+Getting Tidy Data 
 
 ## Script  run_analysis.R 
 The script that does the following. 
@@ -60,8 +69,6 @@ The script that does the following.
  3.  Uses descriptive activity names to name the activities in the data set
  4.  Appropriately labels the data set with descriptive variable names. 
  5.  From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-
-
 
 
 ## The tidy data 
