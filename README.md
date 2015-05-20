@@ -33,19 +33,20 @@ If we verified that there is no "UCI HAR Dataset" directory, download and decomp
 By `download.file` from  https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip, and then `unzip` the downloaded data.
 
 #### - Generate worktables
-Extracting Data
- - Train data
- - Test data
- - Features
- - Activity labels
+  Extracting Data
+   Train data
+   Test data
+   Features
+   Activity labels
+ 
 #### - Merge worktables to create a single data set
- Merge the training and the test sets
-####- Assign column names to the merged data
-####- From merge data, extract mean, std of measurements
-####- Label the data set with descriptive variable names
+        Merge the training and the test sets
+#### -  Assign column names to the merged data
+#### - From merge data, extract mean, std of measurements
+#### - Label the data set with descriptive variable names
       Name with Descriptive activity names
       Labelling data set with descriptive variable names
-####- Write the tidy data set created to an output file
+#### - Write the tidy data set created to an output file
       Getting Tidy Data 
 
 All these actions are programmed in the script [run_analysis.R](https://github.com/gidago/Getting-and-Cleaning-Data/blob/master/run_analysis.R).
