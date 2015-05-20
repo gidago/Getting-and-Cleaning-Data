@@ -1,5 +1,6 @@
 # Getting-and-Cleaning-Data
 Collecting and cleaning data for downstream analysis and sharing.
+
 ## Introduction
 The goal of this project is to prepare a tidy data that can be used for later analysis. 
 The work was done by a R scritp (run_analysis.R) to convert raw data into Tidy data set.
@@ -8,9 +9,7 @@ The work was done by a R scritp (run_analysis.R) to convert raw data into Tidy d
 
 This project tries to follow the guidelines given in  [“How to share data with a statistician”](https://github.com/jtleek/datasharing)
 
-
 ## Project files
-
 |  | File  | Use |
 |:-:|:--------       | -----:   |
 | 1 | README.md      |This text |
@@ -18,19 +17,7 @@ This project tries to follow the guidelines given in  [“How to share data with
 | 3 | Codebook.md    |Variables description |
 | 4 | tidyData.txt   |Result file |
 
-
----
-title: "Codebook for project Getting and Cleaning Data"
-author: "Student"
-date: "20-May-2015"
-output:
-html_document:
-keep_md: yes
----
-
-
 ## The raw data (data source)
-
 The data linked to from the course website represent data collected from the accelerometers from the Samsung Galaxy S smartphone. A full description is available at the site where the data was obtained:
 
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
@@ -40,6 +27,10 @@ Here are the data for the project:
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
 ## Steps (instruction list)
+
+
+
+
 The script, `run_analysis.R`, does the following,
 
 * Load the various files which make-up the UCI dataset
