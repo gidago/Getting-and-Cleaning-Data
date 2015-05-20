@@ -9,10 +9,10 @@
 #          - Test data
 #          - Features  
 #          - Activity labels
-#    3.- Merge train and test worktables to create a single data set
+#    3.- Merge worktables to create a single data set
 #    === Operate ===
 #    4.- Assign column names to the merged data
-
+#    5.- From merge data, extract mean, std of measurements
 #
 # Load libraries
 library(data.table)
@@ -47,37 +47,36 @@ print("Reading features and activity labels")
 activity.labels<-read.table("./UCI HAR Dataset/activity_labels.txt",header = FALSE)
 feature.names<-read.table("./UCI HAR Dataset/features.txt",header = FALSE)
 #------------------------------------------------------------------#
-##  3. Merge train and test worktables to create a single data set
+##  3. Merge worktables to create a single data set
 #------------------------------------------------------------------#
-print ("Merging the test and train data sets")
-train.data  <- cbind(train.subject, train.y, train.x) # "activity" is a KEY
-test.data   <- cbind(test.subject,  test.y , test.x)
-
-dataAll <- rbind(train.data, test.data)
-
+print ("Merging the x and y data sets")
+##train.data  <- cbind(train.subject, train.y, train.x) # "activity" is a KEY
+##test.data   <- cbind(test.subject,  test.y , test.x)
+##dataAll <- rbind(train.data, test.data)
 X          <- rbind(train.x, test.x)
 y          <- rbind(train.y, test.y)
+
 subject_id <- rbind(train.subject, test.subject)
 
 # free memory
-rm(test.data, train.data) 
-
-feature <- as.character(feature.names[[2]])
-feature <- gsub("\\(|)","",feature)
-feature <- gsub("-", "_",feature)
-
+#rm(test.data, train.data) 
 #------------------------------------------------------------------#
 #    4. Assign column names to the merged data
 #------------------------------------------------------------------#
-# Merge data, extract mean, std of measurements, 
+feature <- as.character(feature.names[[2]])
+feature <- gsub("\\(|)","",feature)
+feature <- gsub("-", "_",feature)
 colnames(X) <- feature
+#------------------------------------------------------------------#
+#    5.- From merge data, extract mean, std of measurements
+#------------------------------------------------------------------#
+# Merge data, extract mean, std of measurements, 
 #Select (filter) columns that contents mean or std
-ind <- grep('mean|std', feature)
+ind <- grep('mean|std', feature)    ## 86 features
 X_sel <- X[,ind]
-
 ###### dplyr  ej.: select(mammals, contains("body"))
-
 # and label variable names based on descriptive variable names
+
 HARdata <- cbind(subject_id, y, X_sel)
 
 colnames(HARdata)[1]  <- 'subjectID'
