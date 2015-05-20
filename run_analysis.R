@@ -37,6 +37,7 @@ print("Reading train  data")
 train.x<-read.table("./UCI HAR Dataset/train/X_train.txt",header = FALSE)
 train.y<-read.table("./UCI HAR Dataset/train/y_train.txt",header = FALSE)
 Subject_train<-read.table("./UCI HAR Dataset/train/subject_train.txt",header = FALSE)
+
 print("Reading test data")
 test.x<-read.table("./UCI HAR Dataset/test/X_test.txt",header = FALSE)
 test.y<-read.table("./UCI HAR Dataset/test/y_test.txt",header = FALSE)
@@ -50,6 +51,7 @@ features<-read.table("./UCI HAR Dataset/features.txt",header = FALSE)
 print ("Merging the test and train data sets")
 test.data <- cbind(test.y, Subject_test, test.x)
 train.data  <- cbind(Subject_train, train.y, train.x) # "activity" is a KEY
+
 dataAll <- rbind(test.data, train.data)
 
 X <- rbind(train.x, test.x)
@@ -72,6 +74,10 @@ colnames(X) <- feature
 
 ind <- grep('mean|std', feature)
 X_sel <- X[,ind]
+
+
+###### dplyr  ej.: select(mammals, contains("body"))
+
 
 HARdata <- cbind(subject_id, y, X_sel)
 colnames(HARdata)[1]  <- 'subjectID'
@@ -128,3 +134,25 @@ write.table(activityMeans, './tidyData.txt',row.names=FALSE,sep='\t');
 ## remove old data sets from memory
 #rm(testData)
 #rm(trainData)
+########### 
+# dplyr approach: create a table grouped by Dest, and then summarise each group by taking the mean of ArrDelay
+flights %>%
+    group_by(Dest) %>%
+    summarise(avg_delay = mean(ArrDelay, na.rm=TRUE))
+    
+# 1 aprox    
+    activityMeans %>%
+      group_by(activities) %>%
+      summarise_each(funs(mean))
+      
+# for each carrier, calculate the percentage of flights cancelled or diverted
+flights %>%
+    group_by(UniqueCarrier) %>%
+    summarise_each(funs(mean), Cancelled, Diverted)   
+    
+    
+    # summarise with group_by:
+head(summarise(group_by(mammals, order),
+  mean_mass = mean(adult_body_mass_g, na.rm = TRUE)))
+
+    
