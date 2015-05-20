@@ -19,6 +19,16 @@ This project tries to follow the guidelines given in  [“How to share data with
 | 4 | tidyData.txt   |Result file |
 
 
+---
+title: "Codebook for project Getting and Cleaning Data"
+author: "Student"
+date: "20-May-2015"
+output:
+html_document:
+keep_md: yes
+---
+
+
 ## The raw data (data source)
 
 The data linked to from the course website represent data collected from the accelerometers from the Samsung Galaxy S smartphone. A full description is available at the site where the data was obtained:
