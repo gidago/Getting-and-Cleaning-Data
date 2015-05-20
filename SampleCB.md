@@ -1,5 +1,5 @@
 ---
-title: "Codebook for project **Getting and Cleaning Data**"
+title: "Codebook for project Getting and Cleaning Data"
 author: "Student"
 date: "20-May-2015"
 output:
