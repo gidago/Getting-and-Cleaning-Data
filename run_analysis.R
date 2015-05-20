@@ -36,12 +36,13 @@ if(!file.exists("UCI HAR Dataset")) {
 print("Reading train  data")
 train.x<-read.table("./UCI HAR Dataset/train/X_train.txt",header = FALSE)
 train.y<-read.table("./UCI HAR Dataset/train/y_train.txt",header = FALSE)
-Subject_train<-read.table("./UCI HAR Dataset/train/subject_train.txt",header = FALSE)
+train.subject<-read.table("./UCI HAR Dataset/train/subject_train.txt",header = FALSE)
 
 print("Reading test data")
 test.x<-read.table("./UCI HAR Dataset/test/X_test.txt",header = FALSE)
 test.y<-read.table("./UCI HAR Dataset/test/y_test.txt",header = FALSE)
-Subject_test<-read.table("./UCI HAR Dataset/test/subject_test.txt",header = FALSE)
+test.subject<-read.table("./UCI HAR Dataset/test/subject_test.txt",header = FALSE)
+
 print("Reading features and activity labels")
 activity_lables<-read.table("./UCI HAR Dataset/activity_labels.txt",header = FALSE)
 features<-read.table("./UCI HAR Dataset/features.txt",header = FALSE)
@@ -49,14 +50,14 @@ features<-read.table("./UCI HAR Dataset/features.txt",header = FALSE)
 ##  3. Merge train and test worktables to create a single data set
 #------------------------------------------------------------------#
 print ("Merging the test and train data sets")
-test.data <- cbind(test.y, Subject_test, test.x)
-train.data  <- cbind(Subject_train, train.y, train.x) # "activity" is a KEY
+train.data  <- cbind(train.subject, train.y, train.x) # "activity" is a KEY
+test.data <- cbind(test.y, test.subject, test.x)
 
 dataAll <- rbind(test.data, train.data)
 
 X <- rbind(train.x, test.x)
 y <- rbind(train.y, test.y)
-subject_id <- rbind(Subject_train, Subject_test)
+subject_id <- rbind(train.subject, test.subject)
 
 # free memory
 rm(test.data, train.data)  
