@@ -46,13 +46,15 @@ print("Reading train  data")
 train.x       <-read.table(paste(pathToRawData,"/train/X_train.txt",       sep=""),header = FALSE)
 train.y       <-read.table(paste(pathToRawData,"/train/y_train.txt",       sep=""),header = FALSE)
 train.subject <-read.table(paste(pathToRawData,"/train/subject_train.txt", sep=""),header = FALSE)
+
 print("Reading test data")
-test.x       <-read.table(paste(pathToRawData,"/test/X_test.txt",       sep=""),header = FALSE)
-test.y       <-read.table(paste(pathToRawData,"/test/y_test.txt",       sep=""),header = FALSE)
-test.subject <-read.table(paste(pathToRawData,"/test/subject_test.txt", sep=""),header = FALSE)
+test.x       <-read.table(paste(pathToRawData,"/test/X_test.txt",           sep=""),header = FALSE)
+test.y       <-read.table(paste(pathToRawData,"/test/y_test.txt",           sep=""),header = FALSE)
+test.subject <-read.table(paste(pathToRawData,"/test/subject_test.txt",     sep=""),header = FALSE)
+
 print("Reading features and activity labels")
-activity.labels<-read.table("./UCI HAR Dataset/activity_labels.txt",header = FALSE)
-feature.names<-read.table("./UCI HAR Dataset/features.txt",header = FALSE)
+activity.labels <-read.table(paste(pathToRawData,"/activity_labels.txt",     sep=""),header = FALSE)
+feature.names   <-read.table(paste(pathToRawData,"/features.txt",            sep=""),header = FALSE)
 #------------------------------------------------------------------#
 ##  3. Merge worktables to create a single data set
 #------------------------------------------------------------------#
@@ -62,6 +64,7 @@ y          <- rbind(train.y, test.y)
 subject_id <- rbind(train.subject, test.subject)
 # free memory - remove old data sets from memory
 rm(train.x, test.x, train.y, test.y, train.subject, test.subject) 
+
 #------------------------------------------------------------------#
 #    4. Assign column names to the merged data
 #------------------------------------------------------------------#
@@ -78,6 +81,7 @@ X_sel <- X[,selector]
 dataMerged <- cbind(subject_id, y, X_sel)
 # free memory - remove old data sets from memory
 rm(X, subject_id, y, X_sel)
+
 colnames(dataMerged)[1] <- 'subjectID'
 colnames(dataMerged)[2] <- 'activity'
 dataMerged$activity <- factor(dataMerged$activity, levels=activity.labels[[1]],
@@ -120,6 +124,7 @@ dataGrouped <- group_by(dataMerged, activity, subjectID)
 activityMeans <- summarise_each(dataGrouped , funs(mean))
 # free memory - remove old data sets from memory
 rm(dataMerged, dataGrouped)
+
 #------------------------------------------------------------------#
 ## 7. Write the tidy data set created to an output file
 #------------------------------------------------------------------#
