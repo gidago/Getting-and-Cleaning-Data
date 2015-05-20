@@ -28,17 +28,6 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 
 ## Steps (instruction list)
 
-
- 
-
-The script, `run_analysis.R`, does the following,
-
-* Load the various files which make-up the UCI dataset
-* Merges the three `test` and three `train` files into a single data table, setting textual columns heading where possible
-* Creates a smaller second dataset, containing only mean and std variables
-* Computes the means of this secondary dataset, group by subject/activity.
-* Saves this last dataset to `./data/tidyData.txt`
-
 #### - Loading Data
 If we verified that there is no "UCI HAR Dataset" directory, download and decompress the data.
 By `download.file` from  https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip, and then `unzip` the downloaded data.
@@ -51,25 +40,15 @@ Extracting Data
  - Activity labels
 #### - Merge worktables to create a single data set
  Merge the training and the test sets
-
 ####- Assign column names to the merged data
 ####- From merge data, extract mean, std of measurements
 ####- Label the data set with descriptive variable names
-Name with Descriptive activity names
-Labelling data set with descriptive variable names
-
+      Name with Descriptive activity names
+      Labelling data set with descriptive variable names
 ####- Write the tidy data set created to an output file
-Getting Tidy Data 
+      Getting Tidy Data 
 
-## Script  run_analysis.R 
-The script that does the following. 
-
- 1.  Merges the training and the test sets to create one data set.
- 2.  Extracts only the measurements on the mean and standard deviation for each measurement. 
- 3.  Uses descriptive activity names to name the activities in the data set
- 4.  Appropriately labels the data set with descriptive variable names. 
- 5.  From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-
+All these actions are programmed in the script [run_analysis.R](https://github.com/gidago/Getting-and-Cleaning-Data/blob/master/run_analysis.R).
 
 ## The tidy data 
 
