@@ -13,11 +13,12 @@ This project tries to follow the guidelines given in  [“How to share data with
 |  | File  | Use |
 |:-:|:--------       | -----:   |
 | 1 | README.md      |This text |
-| 2 | run_analysis.R |Script   |
+| 2 | [run_analysis.R](https://github.com/gidago/Getting-and-Cleaning-Data/blob/master/run_analysis.R) |Script   |
 | 3 | Codebook.md    |Variables description |
 | 4 | tidyData.txt   |Result file |
 
 Getting-and-Cleaning-Data/run_analysis.R
+(https://github.com/gidago/Getting-and-Cleaning-Data/blob/master/run_analysis.R)
 
 ## The raw data (data source)
 The data linked to from the course website represent data collected from the accelerometers from the Samsung Galaxy S smartphone. A full description is available at the site where the data was obtained:
