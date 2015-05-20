@@ -17,6 +17,8 @@ This project tries to follow the guidelines given in  [“How to share data with
 | 3 | Codebook.md    |Variables description |
 | 4 | tidyData.txt   |Result file |
 
+Getting-and-Cleaning-Data/run_analysis.R
+
 ## The raw data (data source)
 The data linked to from the course website represent data collected from the accelerometers from the Samsung Galaxy S smartphone. A full description is available at the site where the data was obtained:
 
