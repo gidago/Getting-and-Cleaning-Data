@@ -2,6 +2,13 @@
 # 19-May-2015
 # Coursera: Getting and Cleaning Data
 #
+#1. Merges the training and the test sets to create one data set.
+#2. Extracts only the measurements on the mean and standard deviation for each measurement. 
+#3. Uses descriptive activity names to name the activities in the data set
+#4. Appropriately labels the data set with descriptive variable names. 
+#5. From the data set in step 4, creates a second, independent tidy data set with the average 
+#    of each variable for each activity and each subject
+#
 #    === Get raw data ===
 #    1.- Downloading and unzipping datafile
 #    2.- Generate worktables (data sets)
@@ -13,6 +20,8 @@
 #    === Operate ===
 #    4.- Assign column names to the merged data
 #    5.- From merge data, extract mean, std of measurements
+#    6.- Label the data set with descriptive variable names.
+#    7.- Write the tidy data set created to an output file
 #
 # Load libraries
 library(data.table)
@@ -59,7 +68,8 @@ y          <- rbind(train.y, test.y)
 subject_id <- rbind(train.subject, test.subject)
 
 # free memory
-#rm(test.data, train.data) 
+rm(train.x, test.x, train.y, test.y, train.subject, test.subject) 
+
 #------------------------------------------------------------------#
 #    4. Assign column names to the merged data
 #------------------------------------------------------------------#
@@ -72,24 +82,26 @@ colnames(X) <- feature
 #------------------------------------------------------------------#
 # Merge data, extract mean, std of measurements, 
 #Select (filter) columns that contents mean or std
+# Extracting the measurements on the mean and standard deviation for each measurement
 ind <- grep('mean|std', feature)    ## 86 features
 X_sel <- X[,ind]
 ###### dplyr  ej.: select(mammals, contains("body"))
-# and label variable names based on descriptive variable names
-
 HARdata <- cbind(subject_id, y, X_sel)
+
+rm(subject_id, y, X_sel)
 
 colnames(HARdata)[1]  <- 'subjectID'
 colnames(HARdata)[2] <- 'activity'
 
 HARdata$activity <- factor(HARdata$activity, levels=activity_labels[[1]],
                            labels=as.character(activity_labels[[2]]))
-
-# Extracting the measurements on the mean and standard deviation for each measurement
+#------------------------------------------------------------------#
+## 6. Label the data set with descriptive variable names.
+#------------------------------------------------------------------#
+# and label variable names based on descriptive variable names
 # Use descriptive activity names to name the activities in the data set.
 # Updating the colNames vector to include the new column names after merge
 colNames  = colnames(HARdata); 
-
 # Cleaning up the variable names to make them more descriptive
 for (i in 1:length(colNames)) 
 {
@@ -109,7 +121,14 @@ for (i in 1:length(colNames))
 
 # reassigning the new descriptive column names to the finalData set
 colnames(HARdata) = colNames;
-# Label the data set with descriptive variable names.
+#------------------------------------------------------------------#
+## 7. From the previous data set, creates a second,
+##     independent tidy data set with the average 
+##     of each variable for each activity and each subject
+#------------------------------------------------------------------#
+## Create a second tidy data set with 
+## the average of each variable for each activity and each subject
+##
 # Create an independent tidy data set with the average of each variable 
 # for each activity and each subject.
 #finalData2  = HARdata[,names(HARdata) != 'activityType']
@@ -117,17 +136,19 @@ colnames(HARdata) = colNames;
 #tidyData    = aggregate(finalData2[,names(finalData2) != c('activity','subjectId')],by=list(activity=finalData2$activity,subjectId = finalData2$subjectId),mean);
 ##
 ##
-## Create a second tidy data set with 
-## the average of each variable for each activity and each subject
-##
 ###############################################################################
 ## group the data by Activity and Subject
 activities <- group_by(HARdata, activity, subjectID)
 ## calculate the mean of each column
 ## within each group
 activityMeans <- summarise_each(activities, funs(mean))
+#------------------------------------------------------------------#
+## 7. Write the tidy data set created to an output file
+#------------------------------------------------------------------#
 # Write the tidy data set created to an output file
 write.table(activityMeans, './tidyData.txt',row.names=FALSE,sep='\t');
+
+
 
 
 ## remove old data sets from memory
