@@ -26,10 +26,10 @@ See `EADME.txt` and `features_info.txt` in the "UCI HAR Dataset" directory.
 ###Guide to create the tidy data file
 1. Downloading and unzipping datafile
 2. Generate worktables (data sets)
-        - Train data
-        - Test data
-        - Features  
-        - Activity labels
+ - Train data
+ - Test data
+ - Features  
+ - Activity labels
 3. Assign column names to the merged data
 4. Extract mean, std of measurements
 5. Merge worktables to create a single data set
@@ -121,7 +121,7 @@ General description of the file including:
 [72] "freqBodyAccMagnitudeMeanFreq"     
 [73] "freqBodyAccJerkMagnitudeMean"     
 [74] "freqBodyAccJerkMagnitudeStdDev"   
-[75] "freqBodyAccJerkMagnitudeMeanFreq" 
+[75] "freqBodyAccJerkMagnitudeMeanFreq"
 [76] "freqBodyGyroMagnitudeMean"        
 [77] "freqBodyGyroMagnitudeStdDev"      
 [78] "freqBodyGyroMagnitudeMeanFreq"    
@@ -131,7 +131,6 @@ General description of the file including:
 
 
  
-(you can easily use Rcode for this, just load the dataset and provide the information directly form the tidy data file)
  
 ###Variable 1 (repeat this section for all variables in the dataset)
 Short description of what the variable describes.
