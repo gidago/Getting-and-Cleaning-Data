@@ -149,4 +149,4 @@ Some information on the variable including:
 If available, some additional notes on the variable not covered elsewehere. If no notes are present leave this section out.
  
 ##Sources
-"UCI HAR Dataset" directory and more detailed
+"UCI HAR Dataset" directory and more detailed http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
