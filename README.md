@@ -39,11 +39,16 @@ train.x, train.y, train.subject, test.x, test.y, test.subject, activity.labels, 
 
 #### - Merge worktables to create a single data set
 
-First merge the training and the test sets
+First merge *training set* and *test set* in the X data.frame, by **rows**, using `rbind`.
+The same operation for *training labels* and *test labels* in the y data.frame.
+Also create subject_id data.frame for subject of train and test, the same way as the previous two.
 
 #### -  Assign column names to the merged data
 
+
+
 #### - From merge data, extract mean, std of measurements
+
 
 #### - Label the data set with descriptive variable names
 Name with Descriptive activity names
