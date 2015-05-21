@@ -126,4 +126,4 @@ rm(dataMerged, dataGrouped)
 #------------------------------------------------------------------#
 ## 9. Write the tidy data set created to an output file
 #------------------------------------------------------------------#
-write.table(activityMeans, './tidyData.txt', col.names = FALSE, row.names =FALSE, sep=' ') 
+write.table(activityMeans, './tidyData.txt', row.names =FALSE, sep=' ') 
