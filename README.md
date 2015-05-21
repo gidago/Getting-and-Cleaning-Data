@@ -46,7 +46,7 @@ In a later step we will gather these three.
 
 #### -Assign column names to the merged data
 
-We create a vector of strings **feature** and the `colnames` function assign column names in the merged data.frame **X**.
+We create a vector of strings **feature** (these correspond to the 561 columns in the X data files) and the `colnames` function assign column names in the merged data.frame **X**.
 
 #### -From previous data set (X), extract mean and std of measurements
 
@@ -60,8 +60,15 @@ labels=as.character(activity.labels[[2]]))
 
 #### -Label the data set with descriptive variable names
 
++remove parentheses from var names
++replace commas with underscores
 
-Name with Descriptive activity names
+*replace dashes with underscores
+*check for names that begin with the letter t, change the t to time
+
+-check for names that begin with the letter f, change the f to frequency
+-check for names with "BodyBody", change this to "Body"
+
 Labelling data set with descriptive variable names
 
 colNames[i] <- gsub("\\(|)","",colNames[i])
@@ -83,17 +90,17 @@ colNames[i] <- gsub("GyroMag","GyroMagnitude",colNames[i])
  
  set with the average of each variable for each activity and each subjec
 
+ #### -Group the data by activity and subjectID
+ 
+dataGrouped <- group_by(dataMerged, activity, subjectID)
+
+#### -Calculate the mean of each column within each group
+
+activityMeans <- summarise_each(dataGrouped , funs(mean))
 
 #### -Write the tidy data set created to an output file
+
 Getting Tidy Data 
-
-All these actions are programmed in the script [run_analysis.R](https://github.com/gidago/Getting-and-Cleaning-Data/blob/master/run_analysis.R).
-
-To execute this script in RStudio type in the console: source("run_analysis.R")
-# group the data by activity and subjectID
-dataGrouped <- group_by(dataMerged, activity, subjectID)
-# calculate the mean of each column within each group
-activityMeans <- summarise_each(dataGrouped , funs(mean))
 
 
 ## The tidy data 
@@ -107,3 +114,6 @@ The final data frame `activityMeans` looks like this:
 
 This data frame is saved without headers to tidyData.txt with `write.table` function.
 
+All these actions are programmed in the script [run_analysis.R](https://github.com/gidago/Getting-and-Cleaning-Data/blob/master/run_analysis.R).
+
+To execute this script in RStudio type in the console: source("run_analysis.R")
