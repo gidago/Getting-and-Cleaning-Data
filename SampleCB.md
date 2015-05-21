@@ -42,11 +42,11 @@ See `EADME.txt` and `features_info.txt` in the "UCI HAR Dataset" directory.
 ###Cleaning of the data
 Short, high-level description of what the cleaning script does. [link to the readme document that describes the code in greater detail]()
  
-##Description of the variables in the tiny_data.txt file
-General description of the file including:
+##Description of the variables in the tidyData.txt file
+ 
 - Dimensions of the dataset: 180 obs. of  81 variables
-- Summary of the data 
 - Variables present in the dataset
+
  [1] "activity"                         
  [2] "subjectID"                        
  [3] "timeBodyAccMean_X"                
@@ -130,13 +130,15 @@ General description of the file including:
 [81] "freqBodyGyroJerkMagnitudeMeanFreq"
 
 
+ $ subjectID                        : int  1 2 3 4 5 6 7 8 9 10 ...
+ $ timeBodyAccMean_X                : num 
  
  
-###Variable 1 (repeat this section for all variables in the dataset)
+###activity (repeat this section for all variables in the dataset)
 Short description of what the variable describes.
  
 Some information on the variable including:
-- Class of the variable
+- Factor w/ 6 levels
 - Unique values/levels of the variable
 - Unit of measurement (if no unit of measurement list this as well)
 - In case names follow some schema, describe how entries were constructed (for example time-body-gyroscope-z has 4 levels of descriptors. Describe these 4 levels).
@@ -147,7 +149,4 @@ Some information on the variable including:
 If available, some additional notes on the variable not covered elsewehere. If no notes are present leave this section out.
  
 ##Sources
-Sources you used if any, otherise leave out.
- 
-##Annex
-If you used any code in the codebook that had the echo=FALSE attribute post this here (make sure you set the results parameter to 'hide' as you do not want the results to show again) 
+"UCI HAR Dataset" directory and more detailed
