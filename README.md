@@ -45,6 +45,10 @@ Also create subject_id data.frame for subject of train and test, the same way as
 
 #### -  Assign column names to the merged data
 
+We create a feature vector of strings and assign with the `colnames` the column names.
+colnames(X) <- feature     colnames
+
+We create a vector of strings **feature** and the "colnames" function assign column names in the merged data.frame X.
 
 
 #### - From merge data, extract mean, std of measurements
