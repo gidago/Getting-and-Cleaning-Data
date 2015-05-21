@@ -55,20 +55,46 @@ In the **X** data.frame, we subsetting the columns with vector **selector** (onl
 
 #### -Uses descriptive activity names to name the activities in the data set
 
+dataMerged$activity <- factor(dataMerged$activity, levels=activity.labels[[1]],
+labels=as.character(activity.labels[[2]]))
 
 #### -Label the data set with descriptive variable names
+
+
 Name with Descriptive activity names
 Labelling data set with descriptive variable names
 
+colNames[i] <- gsub("\\(|)","",colNames[i])
+colNames[i] <- gsub("-", "_",colNames[i])
+colNames[i] <- gsub("\\()","",colNames[i])
+colNames[i] <- gsub("_std$","StdDev",colNames[i])
+colNames[i] <- gsub("_mean","Mean",colNames[i])
+colNames[i] <- gsub("^(t)","time",colNames[i])
+colNames[i] <- gsub("^(f)","freq",colNames[i])
+colNames[i] <- gsub("([Gg]ravity)","Gravity",colNames[i])
+colNames[i] <- gsub("([Bb]ody[Bb]ody|[Bb]ody)","Body",colNames[i])
+colNames[i] <- gsub("[Gg]yro","Gyro",colNames[i])
+colNames[i] <- gsub("AccMag","AccMagnitude",colNames[i])
+colNames[i] <- gsub("([Bb]odyaccjerkmag)","BodyAccJerkMagnitude",colNames[i])
+colNames[i] <- gsub("JerkMag","JerkMagnitude",colNames[i])
+colNames[i] <- gsub("GyroMag","GyroMagnitude",colNames[i])
+
+#### -From the previous data set, creates a second, independent tidy data set
+ 
+ set with the average of each variable for each activity and each subjec
 
 
-
-#### - Write the tidy data set created to an output file
+#### -Write the tidy data set created to an output file
 Getting Tidy Data 
 
 All these actions are programmed in the script [run_analysis.R](https://github.com/gidago/Getting-and-Cleaning-Data/blob/master/run_analysis.R).
 
 To execute this script in RStudio type in the console: source("run_analysis.R")
+# group the data by activity and subjectID
+dataGrouped <- group_by(dataMerged, activity, subjectID)
+# calculate the mean of each column within each group
+activityMeans <- summarise_each(dataGrouped , funs(mean))
+
 
 ## The tidy data 
 
@@ -79,5 +105,5 @@ The final data frame `activityMeans` looks like this:
     2  WALKING       2         0.2764266       -0.01859492        -0.1055004
     3  WALKING       3         0.2755675       -0.01717678        -0.1126749
 
-This data frame is saved without headers to tidyData.txt
+This data frame is saved without headers to tidyData.txt with `write.table` function.
 
