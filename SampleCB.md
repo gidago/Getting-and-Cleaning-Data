@@ -120,8 +120,10 @@ Short, high-level description of what the cleaning script does. [link to the rea
 [71] "freqBodyAccMagnitudeStdDev"       
 [72] "freqBodyAccMagnitudeMeanFreq"     
 [73] "freqBodyAccJerkMagnitudeMean"     
-[74] "freqBodyAccJerkMagnitudeStdDev"   
+[74] "freqBodyAccJerkMagnitudeStdDev"
+
 [75] "freqBodyAccJerkMagnitudeMeanFreq"
+
 [76] "freqBodyGyroMagnitudeMean"        
 [77] "freqBodyGyroMagnitudeStdDev"      
 [78] "freqBodyGyroMagnitudeMeanFreq"    
@@ -129,16 +131,18 @@ Short, high-level description of what the cleaning script does. [link to the rea
 [80] "freqBodyGyroJerkMagnitudeStdDev"  
 [81] "freqBodyGyroJerkMagnitudeMeanFreq"
 
-
- $ subjectID                        : int  1 2 3 4 5 6 7 8 9 10 ...
- $ timeBodyAccMean_X                : num 
- 
- 
 ###activity (repeat this section for all variables in the dataset)
 Short description of what the variable describes.
  
 Some information on the variable including:
 - Factor w/ 6 levels
+- Levels of the variable:
+ 1. WALKING                                             
+ 2. WALKING_UPSTAIRS                                    
+ 3. WALKING_DOWNSTAIRS                                
+ 4. SITTING                                         
+ 5. STANDING                                       
+ 6. LAYING     
 - Unique values/levels of the variable
 - Unit of measurement (if no unit of measurement list this as well)
 - In case names follow some schema, describe how entries were constructed (for example time-body-gyroscope-z has 4 levels of descriptors. Describe these 4 levels).
@@ -148,5 +152,16 @@ Some information on the variable including:
 ####Notes on variable 1:
 If available, some additional notes on the variable not covered elsewehere. If no notes are present leave this section out.
  
+###subjectID
+identifier of the volunteer who carried out the experiment
+int
+range is from 1 to 30
+
+| (561)  | features  | feature vector with time and frequency domain variables  
+num 
+Features are normalized and bounded within [-1,1]
+
 ##Sources
-"UCI HAR Dataset" directory and more detailed http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+"UCI HAR Dataset" directory and more detailed: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+
+[1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
