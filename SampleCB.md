@@ -19,12 +19,25 @@ The experiments have been carried out with a group of 30 volunteers within an ag
 The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. See 'features_info.txt' for more details. 
  
 ###Notes on the original (raw) data
-Some additional notes (if avaialble, otherwise you can leave this section out).
+See `EADME.txt` and `features_info.txt` in the "UCI HAR Dataset" directory.
  
 ##Creating the tidy datafile
  
 ###Guide to create the tidy data file
-Description on how to create the tidy data file (1. download the data, ...)/
+1.- Downloading and unzipping datafile
+2.- Generate worktables (data sets)
+        - Train data
+        - Test data
+        - Features  
+        - Activity labels
+3.- Assign column names to the merged data
+4.- Extract mean, std of measurements
+5.- Merge worktables to create a single data set
+6.- Uses descriptive activity names to name the activities in the data set
+7.- Label the data set with descriptive variable names
+8.- From the previous data set, creates a second, independent tidy data set 
+   set with the average of each variable for each activity and each subject
+9.- Write the tidy data set created to an output file
  
 ###Cleaning of the data
 Short, high-level description of what the cleaning script does. [link to the readme document that describes the code in greater detail]()
