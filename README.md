@@ -33,12 +33,9 @@ If we verified that there is no "UCI HAR Dataset" directory, download and decomp
 By `download.file` from  https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip, and then `unzip` the downloaded data.
 
 #### - Generate worktables
-  Extracting Data
-   Train data
-   Test data
-   Features
-   Activity labels
- 
+From the "UCI HAR Dataset" directory we get data from Train, Test, Features, Activity labels and then load it in the following tables by `read.table`
+  train.x, train.y, train.subject, test.x, test.y, test.subject, activity.labels, feature.names
+
 #### - Merge worktables to create a single data set
 
 Merge the training and the test sets
