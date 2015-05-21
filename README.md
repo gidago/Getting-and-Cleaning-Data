@@ -28,11 +28,11 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 
 ## Steps (instruction list)
 
-#### - Loading Data
+#### -Loading Data
 If we verified that there is no "UCI HAR Dataset" directory, download and decompress the data.
 By `download.file` from  https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip, and then `unzip` the downloaded data.
 
-#### - Generate worktables
+#### -Generate worktables
 From the "UCI HAR Dataset" directory we get data from Train, Test, Features, Activity labels and then load it in the following tables by `read.table`.
 
 train.x, train.y, train.subject, test.x, test.y, test.subject, activity.labels, feature.names
@@ -45,14 +45,12 @@ Also create subject_id data.frame for subject of train and test, the same way as
 
 #### -  Assign column names to the merged data
 
-We create a feature vector of strings and assign with the  the column names.
-colnames(X) <- feature     colnames
-
 We create a vector of strings **feature** and the `colnames` function assign column names in the merged data.frame **X**.
 
+#### - From previous data set, extract mean and std of measurements
 
-#### - From merge data, extract mean, std of measurements
-
+For the extraction of measurements in the mean and standard deviation for each measurement, we create a vector **selector** applying a text search "mean" or "std" in the feature vector.
+In the **X** data.frame, we subsetting the columns with vector **selector** (only contains columns with Mean value or Standard deviation) for get the data.frame **X_sel**.
 
 #### - Label the data set with descriptive variable names
 Name with Descriptive activity names
