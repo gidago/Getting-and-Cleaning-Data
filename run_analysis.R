@@ -85,7 +85,7 @@ colnames(dataMerged)[2] <- 'activity'
 ## 6.- Uses descriptive activity names to name the activities in the data set
 #-----------------------------------------------------------------------------#
 dataMerged$activity <- factor(dataMerged$activity, levels=activity.labels[[1]],
-                           labels=as.character(activity.labels[[2]]))
+                              labels=as.character(activity.labels[[2]]))
 
 #-----------------------------------------------------------------------------#
 ## 7. Label the data set with descriptive variable names
@@ -126,4 +126,4 @@ rm(dataMerged, dataGrouped)
 #------------------------------------------------------------------#
 ## 9. Write the tidy data set created to an output file
 #------------------------------------------------------------------#
-write.table(activityMeans, './tidyData.txt',row.names=FALSE,sep='\t')
+write.table(activityMeans, './tidyData.txt', col.names = FALSE, row.names =FALSE, sep=' ') 
