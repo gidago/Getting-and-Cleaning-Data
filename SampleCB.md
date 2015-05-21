@@ -24,20 +24,20 @@ See `EADME.txt` and `features_info.txt` in the "UCI HAR Dataset" directory.
 ##Creating the tidy datafile
  
 ###Guide to create the tidy data file
---1.- Downloading and unzipping datafile
---2.- Generate worktables (data sets)
+1. Downloading and unzipping datafile
+2. Generate worktables (data sets)
         - Train data
         - Test data
         - Features  
         - Activity labels
---3.- Assign column names to the merged data
-4.- Extract mean, std of measurements
-5.- Merge worktables to create a single data set
-6.- Uses descriptive activity names to name the activities in the data set
-7.- Label the data set with descriptive variable names
-8.- From the previous data set, creates a second, independent tidy data set 
+3. Assign column names to the merged data
+4. Extract mean, std of measurements
+5. Merge worktables to create a single data set
+6. Uses descriptive activity names to name the activities in the data set
+7. Label the data set with descriptive variable names
+8. From the previous data set, creates a second, independent tidy data set 
    set with the average of each variable for each activity and each subject
-9.- Write the tidy data set created to an output file
+9. Write the tidy data set created to an output file
  
 ###Cleaning of the data
 Short, high-level description of what the cleaning script does. [link to the readme document that describes the code in greater detail]()
