@@ -8,7 +8,7 @@ keep_md: yes
 ---
  
 ## Project Description
-Short description of the project
+The goal of this project is to prepare a tidy data that can be used for later analysis. The work was done by a R scritp (run_analysis.R) to convert raw data into Tidy data set.
  
 ##Study design and data processing
  
@@ -47,6 +47,8 @@ Short, high-level description of what the cleaning script does. [link to the rea
 - Dimensions of the dataset: 180 obs. of  81 variables
 - Variables present in the dataset
 
+
+
  [1] "activity"                         
  [2] "subjectID"                        
  [3] "timeBodyAccMean_X"                
@@ -55,7 +57,8 @@ Short, high-level description of what the cleaning script does. [link to the rea
  [6] "timeBodyAcc_std_X"                
  [7] "timeBodyAcc_std_Y"                
  [8] "timeBodyAcc_std_Z"                
- [9] "timeGravityAccMean_X"             
+ [9] "timeGravityAccMean_X"
+ 
 [10] "timeGravityAccMean_Y"             
 [11] "timeGravityAccMean_Z"             
 [12] "timeGravityAcc_std_X"             
@@ -65,7 +68,8 @@ Short, high-level description of what the cleaning script does. [link to the rea
 [16] "timeBodyAccJerkMean_Y"            
 [17] "timeBodyAccJerkMean_Z"            
 [18] "timeBodyAccJerk_std_X"            
-[19] "timeBodyAccJerk_std_Y"            
+[19] "timeBodyAccJerk_std_Y"
+
 [20] "timeBodyAccJerk_std_Z"            
 [21] "timeBodyGyroMean_X"               
 [22] "timeBodyGyroMean_Y"               
@@ -75,7 +79,8 @@ Short, high-level description of what the cleaning script does. [link to the rea
 [26] "timeBodyGyro_std_Z"               
 [27] "timeBodyGyroJerkMean_X"           
 [28] "timeBodyGyroJerkMean_Y"           
-[29] "timeBodyGyroJerkMean_Z"           
+[29] "timeBodyGyroJerkMean_Z"
+
 [30] "timeBodyGyroJerk_std_X"           
 [31] "timeBodyGyroJerk_std_Y"           
 [32] "timeBodyGyroJerk_std_Z"           
@@ -85,7 +90,8 @@ Short, high-level description of what the cleaning script does. [link to the rea
 [36] "timeGravityAccMagnitudeStdDev"    
 [37] "timeBodyAccJerkMagnitudeMean"     
 [38] "timeBodyAccJerkMagnitudeStdDev"   
-[39] "timeBodyGyroMagnitudeMean"        
+[39] "timeBodyGyroMagnitudeMean"
+
 [40] "timeBodyGyroMagnitudeStdDev"      
 [41] "timeBodyGyroJerkMagnitudeMean"    
 [42] "timeBodyGyroJerkMagnitudeStdDev"  
@@ -95,7 +101,8 @@ Short, high-level description of what the cleaning script does. [link to the rea
 [46] "freqBodyAcc_std_X"                
 [47] "freqBodyAcc_std_Y"                
 [48] "freqBodyAcc_std_Z"                
-[49] "freqBodyAccMeanFreq_X"            
+[49] "freqBodyAccMeanFreq_X"
+
 [50] "freqBodyAccMeanFreq_Y"            
 [51] "freqBodyAccMeanFreq_Z"            
 [52] "freqBodyAccJerkMean_X"            
@@ -105,7 +112,8 @@ Short, high-level description of what the cleaning script does. [link to the rea
 [56] "freqBodyAccJerk_std_Y"            
 [57] "freqBodyAccJerk_std_Z"            
 [58] "freqBodyAccJerkMeanFreq_X"        
-[59] "freqBodyAccJerkMeanFreq_Y"        
+[59] "freqBodyAccJerkMeanFreq_Y"
+
 [60] "freqBodyAccJerkMeanFreq_Z"        
 [61] "freqBodyGyroMean_X"               
 [62] "freqBodyGyroMean_Y"               
@@ -115,19 +123,19 @@ Short, high-level description of what the cleaning script does. [link to the rea
 [66] "freqBodyGyro_std_Z"               
 [67] "freqBodyGyroMeanFreq_X"           
 [68] "freqBodyGyroMeanFreq_Y"           
-[69] "freqBodyGyroMeanFreq_Z"           
+[69] "freqBodyGyroMeanFreq_Z"
+
 [70] "freqBodyAccMagnitudeMean"         
 [71] "freqBodyAccMagnitudeStdDev"       
 [72] "freqBodyAccMagnitudeMeanFreq"     
 [73] "freqBodyAccJerkMagnitudeMean"     
 [74] "freqBodyAccJerkMagnitudeStdDev"
-
 [75] "freqBodyAccJerkMagnitudeMeanFreq"
-
 [76] "freqBodyGyroMagnitudeMean"        
 [77] "freqBodyGyroMagnitudeStdDev"      
 [78] "freqBodyGyroMagnitudeMeanFreq"    
-[79] "freqBodyGyroJerkMagnitudeMean"    
+[79] "freqBodyGyroJerkMagnitudeMean"
+
 [80] "freqBodyGyroJerkMagnitudeStdDev"  
 [81] "freqBodyGyroJerkMagnitudeMeanFreq"
 
@@ -156,6 +164,8 @@ If available, some additional notes on the variable not covered elsewehere. If n
 identifier of the volunteer who carried out the experiment
 int
 range is from 1 to 30
+
+###features [3] to [81]
 
 | (561)  | features  | feature vector with time and frequency domain variables  
 num 
