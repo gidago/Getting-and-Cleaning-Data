@@ -73,12 +73,9 @@ By pattern matching and replacement (function `gsub`) we make the following chan
 - replace names with "AccMag", with "AccMagnitude"  (e.g. tBodyAccMag-mean();	tBodyAccMagnitude-mean())
 - replace names with "JerkMag", with "JerkMagnitude" (e.g. tBodyAccJerkMag-mean();	tBodyAccJerkMagnitude-mean())
 - replace names with "GyroMag", with "GyroMagnitude" (e.g. tBodyGyroMag-mean();	tBodyGyroMagnitude-mean())
+Thus the name of tBodyAccJerkMag-std() variable, stay this way timeBodyAccJerkMagnitudeStdDev.
 
-
-
-#### -From the previous data set, creates a second, independent tidy data set
-#### -Group the data by activity and subjectID
-
+#### -From the previous data set, creates a second, independent tidy data set grouped the data by activity and subjectID
 Taking as input the datosMezclados get the new file grouped by agrupadopor sentence
 
  set with the average of each variable for each activity and each subjec
@@ -92,8 +89,6 @@ activityMeans <- summarise_each(dataGrouped , funs(mean))
 
 #### -Write the tidy data set created to an output file
 write.table(activityMeans, './tidyData.txt', row.names =FALSE, sep=' ') 
-Getting Tidy Data 
-
 
 ## The tidy data 
 
