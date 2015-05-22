@@ -129,7 +129,7 @@ Short, high-level description of what the cleaning script does. [link to the rea
 [80] "freqBodyGyroJerkMagnitudeStdDev"  
 [81] "freqBodyGyroJerkMagnitudeMeanFreq"
 
-###activity (repeat this section for all variables in the dataset)
+###activity
 One of the six activities conducted by volunteers.
  
 - Factor w/ 6 levels
@@ -150,14 +150,14 @@ Identifier of the volunteer who carried out the experiment.
 ###features [3] to [81]
 Set of variables filtered from initial set of 561.
 The set of variables that were estimated from these signals are: 
-            mean(): Mean value
-            std(): Standard deviation
+           - mean(): Mean value
+           - std(): Standard deviation
 Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
-            gravityMean
-            tBodyAccMean
-            tBodyAccJerkMean
-            tBodyGyroMean
-            tBodyGyroJerkMean
+           - gravityMean
+           - tBodyAccMean
+           - tBodyAccJerkMean
+           - tBodyGyroMean
+           - tBodyGyroJerkMean
 
  - num 
  - Features are normalized and bounded within [-1,1]
