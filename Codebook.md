@@ -40,7 +40,7 @@ See `EADME.txt` and `features_info.txt` in the "UCI HAR Dataset" directory.
 9. Write the tidy data set created to an output file
  
 ###Cleaning of the data
-See [RE]()
+See [README.md]()
  
 ##Description of the variables in the tidyData.txt file
  
