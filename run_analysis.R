@@ -1,4 +1,4 @@
-# run_analysis.R
+## run_analysis.R
 # 21-May-2015
 # Coursera: Getting and Cleaning Data
 #
@@ -27,6 +27,7 @@ pathToRawData <- "./UCI HAR Dataset"
 #     If there is input data directory, 
 #     no download/unzipping  of data files are made.
 if(!file.exists("UCI HAR Dataset")) {
+  print("Download/unzipping UCI HAR Dataset")
   fileUrl<-"https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
   download.file(fileUrl,destfile="./temp.zip", method="curl")
   unzip("temp.zip", files = NULL, list = FALSE, overwrite = TRUE, junkpaths = FALSE, exdir ="./", unzip = "internal", setTimes = FALSE)
@@ -66,6 +67,7 @@ colnames(X) <- feature
 #-----------------------------------------------------------------------------#
 #    4.- Extract mean, std of measurements
 #-----------------------------------------------------------------------------#
+print("Filtering X data")
 # Select (filter) columns that contents mean or std
 selector <- grep('mean|std', feature)   
 # Extracting the measurements on the mean and standard deviation for each measurement
@@ -74,6 +76,7 @@ X_sel <- X[,selector]
 #-----------------------------------------------------------------------------#
 ##  5. Merge worktables to create a single data set
 #-----------------------------------------------------------------------------#
+print("Merging worktables")
 dataMerged <- cbind(subject_id, y, X_sel)
 # free memory - remove old data sets from memory
 rm(X, subject_id, y, X_sel)
@@ -84,29 +87,27 @@ colnames(dataMerged)[2] <- 'activity'
 #-----------------------------------------------------------------------------#
 ## 6.- Uses descriptive activity names to name the activities in the data set
 #-----------------------------------------------------------------------------#
+print("Apply descriptive activity names")
 dataMerged$activity <- factor(dataMerged$activity, levels=activity.labels[[1]],
                               labels=as.character(activity.labels[[2]]))
 
 #-----------------------------------------------------------------------------#
 ## 7. Label the data set with descriptive variable names
 #-----------------------------------------------------------------------------#
+print("Labeling with descriptive variable names")
 # Create the colNames vector to include the new column names after merge
 colNames  <- colnames(dataMerged)
 # Cleaning up the variable names to make them more descriptive
 for (i in 1:length(colNames)) 
 {
   colNames[i] <- gsub("\\(|)","",colNames[i])
-  colNames[i] <- gsub("-", "_",colNames[i])
-  colNames[i] <- gsub("\\()","",colNames[i])      
-  colNames[i] <- gsub("_std$","StdDev",colNames[i])
-  colNames[i] <- gsub("_mean","Mean",colNames[i])
+  colNames[i] <- gsub("-", "_",colNames[i])   
   colNames[i] <- gsub("^(t)","time",colNames[i])  
   colNames[i] <- gsub("^(f)","freq",colNames[i])
-  colNames[i] <- gsub("([Gg]ravity)","Gravity",colNames[i])
   colNames[i] <- gsub("([Bb]ody[Bb]ody|[Bb]ody)","Body",colNames[i])
-  colNames[i] <- gsub("[Gg]yro","Gyro",colNames[i])
+  colNames[i] <- gsub("_std$","StdDev",colNames[i])
+  colNames[i] <- gsub("_mean","Mean",colNames[i])  
   colNames[i] <- gsub("AccMag","AccMagnitude",colNames[i])
-  colNames[i] <- gsub("([Bb]odyaccjerkmag)","BodyAccJerkMagnitude",colNames[i])
   colNames[i] <- gsub("JerkMag","JerkMagnitude",colNames[i])
   colNames[i] <- gsub("GyroMag","GyroMagnitude",colNames[i])
 };
@@ -116,6 +117,7 @@ colnames(dataMerged) = colNames
 ## 8. From the previous data set, creates a second, independent tidy data set 
 ##    set with the average of each variable for each activity and each subject
 #-----------------------------------------------------------------------------#
+print("Doing second tidy data set")
 # group the data by activity and subjectID
 dataGrouped <- group_by(dataMerged, activity, subjectID)
 # calculate the mean of each column within each group
@@ -126,4 +128,6 @@ rm(dataMerged, dataGrouped)
 #------------------------------------------------------------------#
 ## 9. Write the tidy data set created to an output file
 #------------------------------------------------------------------#
+print("Write the tidy data set")
 write.table(activityMeans, './tidyData.txt', row.names =FALSE, sep=' ') 
+print("End ...")
