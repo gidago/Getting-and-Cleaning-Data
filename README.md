@@ -53,45 +53,34 @@ We create a vector of strings **feature** (these correspond to the 561 columns i
 For the extraction of measurements in the mean and standard deviation for each measurement, we create a vector **selector** applying a text search "mean" or "std" in the feature vector.
 In the **X** data.frame, we subsetting the columns with vector **selector** (only contains columns with Mean value or Standard deviation) for get the data.frame **X_sel**.
 
-#### -Uses descriptive activity names to name the activities in the data set
+Now we get the data set **dataMerged**, joining by columns subject_id, y, and X_sel
 
-dataMerged$activity <- factor(dataMerged$activity, levels=activity.labels[[1]],
-labels=as.character(activity.labels[[2]]))
+#### -Uses descriptive activity names to name the activities in the data set
+With the following statement we change the numbers in the column activity by meaning
+ ´dataMerged$activity <- factor(dataMerged$activity, levels=activity.labels[[1]],
+ labels=as.character(activity.labels[[2]]))´
 
 #### -Label the data set with descriptive variable names
 
-+remove parentheses from var names
-+replace commas with underscores
+remove parentheses from var names
+replace commas with underscores
+replace dashes with underscores
+replace names that begin with the letter t, change the t to time
+replace names that begin with the letter f, change the f to frequency
+replace names with "BodyBody", change this to "Body"
 
-*replace dashes with underscores
-*check for names that begin with the letter t, change the t to time
-
--check for names that begin with the letter f, change the f to frequency
--check for names with "BodyBody", change this to "Body"
-
-Labelling data set with descriptive variable names
-
-colNames[i] <- gsub("\\(|)","",colNames[i])
-colNames[i] <- gsub("-", "_",colNames[i])
-colNames[i] <- gsub("\\()","",colNames[i])
-colNames[i] <- gsub("_std$","StdDev",colNames[i])
-colNames[i] <- gsub("_mean","Mean",colNames[i])
-colNames[i] <- gsub("^(t)","time",colNames[i])
-colNames[i] <- gsub("^(f)","freq",colNames[i])
-colNames[i] <- gsub("([Gg]ravity)","Gravity",colNames[i])
-colNames[i] <- gsub("([Bb]ody[Bb]ody|[Bb]ody)","Body",colNames[i])
-colNames[i] <- gsub("[Gg]yro","Gyro",colNames[i])
-colNames[i] <- gsub("AccMag","AccMagnitude",colNames[i])
-colNames[i] <- gsub("([Bb]odyaccjerkmag)","BodyAccJerkMagnitude",colNames[i])
-colNames[i] <- gsub("JerkMag","JerkMagnitude",colNames[i])
-colNames[i] <- gsub("GyroMag","GyroMagnitude",colNames[i])
+http://www.regexplanet.com/advanced/golang/index.html
+http://regexper.com/
+http://www.regexr.com/
 
 #### -From the previous data set, creates a second, independent tidy data set
- 
- set with the average of each variable for each activity and each subjec
+#### -Group the data by activity and subjectID
 
- #### -Group the data by activity and subjectID
+Taking as input the datosMezclados get the new file grouped by agrupadopor sentence
+
+ set with the average of each variable for each activity and each subjec
  
+ **dataGrouped**
 dataGrouped <- group_by(dataMerged, activity, subjectID)
 
 #### -Calculate the mean of each column within each group
@@ -99,7 +88,7 @@ dataGrouped <- group_by(dataMerged, activity, subjectID)
 activityMeans <- summarise_each(dataGrouped , funs(mean))
 
 #### -Write the tidy data set created to an output file
-
+write.table(activityMeans, './tidyData.txt', row.names =FALSE, sep=' ') 
 Getting Tidy Data 
 
 
