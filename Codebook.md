@@ -49,16 +49,15 @@ Short, high-level description of what the cleaning script does. [link to the rea
 
 
 
- [1] "activity"                         
- [2] "subjectID"                        
- [3] "timeBodyAccMean_X"                
- [4] "timeBodyAccMean_Y"                
- [5] "timeBodyAccMean_Z"                
- [6] "timeBodyAcc_std_X"                
- [7] "timeBodyAcc_std_Y"                
- [8] "timeBodyAcc_std_Z"                
- [9] "timeGravityAccMean_X"
- 
+[ 1] "activity"                         
+[ 2] "subjectID"                        
+[ 3] "timeBodyAccMean_X"                
+[ 4] "timeBodyAccMean_Y"                
+[ 5] "timeBodyAccMean_Z"                
+[ 6] "timeBodyAcc_std_X"                
+[ 7] "timeBodyAcc_std_Y"                
+[ 8] "timeBodyAcc_std_Z"                
+[ 9] "timeGravityAccMean_X"
 [10] "timeGravityAccMean_Y"             
 [11] "timeGravityAccMean_Z"             
 [12] "timeGravityAcc_std_X"             
@@ -69,7 +68,6 @@ Short, high-level description of what the cleaning script does. [link to the rea
 [17] "timeBodyAccJerkMean_Z"            
 [18] "timeBodyAccJerk_std_X"            
 [19] "timeBodyAccJerk_std_Y"
-
 [20] "timeBodyAccJerk_std_Z"            
 [21] "timeBodyGyroMean_X"               
 [22] "timeBodyGyroMean_Y"               
@@ -80,7 +78,6 @@ Short, high-level description of what the cleaning script does. [link to the rea
 [27] "timeBodyGyroJerkMean_X"           
 [28] "timeBodyGyroJerkMean_Y"           
 [29] "timeBodyGyroJerkMean_Z"
-
 [30] "timeBodyGyroJerk_std_X"           
 [31] "timeBodyGyroJerk_std_Y"           
 [32] "timeBodyGyroJerk_std_Z"           
@@ -91,7 +88,6 @@ Short, high-level description of what the cleaning script does. [link to the rea
 [37] "timeBodyAccJerkMagnitudeMean"     
 [38] "timeBodyAccJerkMagnitudeStdDev"   
 [39] "timeBodyGyroMagnitudeMean"
-
 [40] "timeBodyGyroMagnitudeStdDev"      
 [41] "timeBodyGyroJerkMagnitudeMean"    
 [42] "timeBodyGyroJerkMagnitudeStdDev"  
@@ -102,7 +98,6 @@ Short, high-level description of what the cleaning script does. [link to the rea
 [47] "freqBodyAcc_std_Y"                
 [48] "freqBodyAcc_std_Z"                
 [49] "freqBodyAccMeanFreq_X"
-
 [50] "freqBodyAccMeanFreq_Y"            
 [51] "freqBodyAccMeanFreq_Z"            
 [52] "freqBodyAccJerkMean_X"            
@@ -113,7 +108,6 @@ Short, high-level description of what the cleaning script does. [link to the rea
 [57] "freqBodyAccJerk_std_Z"            
 [58] "freqBodyAccJerkMeanFreq_X"        
 [59] "freqBodyAccJerkMeanFreq_Y"
-
 [60] "freqBodyAccJerkMeanFreq_Z"        
 [61] "freqBodyGyroMean_X"               
 [62] "freqBodyGyroMean_Y"               
@@ -124,7 +118,6 @@ Short, high-level description of what the cleaning script does. [link to the rea
 [67] "freqBodyGyroMeanFreq_X"           
 [68] "freqBodyGyroMeanFreq_Y"           
 [69] "freqBodyGyroMeanFreq_Z"
-
 [70] "freqBodyAccMagnitudeMean"         
 [71] "freqBodyAccMagnitudeStdDev"       
 [72] "freqBodyAccMagnitudeMeanFreq"     
