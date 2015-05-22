@@ -62,17 +62,12 @@ With the following statement we change the numbers in the column activity by mea
  labels=as.character(activity.labels[[2]]))`
 
 #### -Label the data set with descriptive variable names
-
-remove parentheses from var names
-replace commas with underscores
-replace dashes with underscores
-replace names that begin with the letter t, change the t to time
-replace names that begin with the letter f, change the f to frequency
-replace names with "BodyBody", change this to "Body"
-
-http://www.regexplanet.com/advanced/golang/index.html
-http://regexper.com/
-http://www.regexr.com/
+By pattern matching and replacement (function `gsub`) we make the following changes in the names of the variables:
+- remove parentheses from var names (e.g. tBodyAcc-mean()-X; tBodyAcc-mean-X)
+- replace dashes with underscores (e.g. tBodyAcc-mean()-X; tBodyAcc_mean_X)
+- replace names that begin with the letter t, change the t to time (e.g. tBodyAcc-mean()-X; timeBodyAcc_mean_X)
+- replace names that begin with the letter f, change the f to frequency (e.g. fBodyAcc-mean()-X; frequencyBodyAcc_mean_X)
+- replace names with "BodyBody", change this to "Body" (e.g. 	fBodyBodyGyroMag-mean(); 	fBodyGyroMag-mean())
 
 #### -From the previous data set, creates a second, independent tidy data set
 #### -Group the data by activity and subjectID
