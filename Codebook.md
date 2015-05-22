@@ -134,12 +134,12 @@ One of the six activities conducted by volunteers.
  
 - Factor w/ 6 levels
 - Levels of the variable:
-     1. WALKING                                             
-     2.  WALKING_UPSTAIRS                                    
-     3 WALKING_DOWNSTAIRS                                
-     4 SITTING                                         
-     5 STANDING                                       
-     6 LAYING     
+1. WALKING                                             
+2.  WALKING_UPSTAIRS                                    
+3 WALKING_DOWNSTAIRS                                
+4 SITTING                                         
+5 STANDING                                       
+6 LAYING     
 - Unique values/levels of the variable
 - Unit of measurement (if no unit of measurement list this as well)
 - In case names follow some schema, describe how entries were constructed (for example time-body-gyroscope-z has 4 levels of descriptors. Describe these 4 levels).
