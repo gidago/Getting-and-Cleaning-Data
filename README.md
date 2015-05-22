@@ -67,7 +67,14 @@ By pattern matching and replacement (function `gsub`) we make the following chan
 - replace dashes with underscores (e.g. tBodyAcc-mean()-X; tBodyAcc_mean_X)
 - replace names that begin with the letter t, change the t to time (e.g. tBodyAcc-mean()-X; timeBodyAcc_mean_X)
 - replace names that begin with the letter f, change the f to frequency (e.g. fBodyAcc-mean()-X; frequencyBodyAcc_mean_X)
-- replace names with "BodyBody", change this to "Body" (e.g. 	fBodyBodyGyroMag-mean(); 	fBodyGyroMag-mean())
+- replace names with "BodyBody", change this to "Body" (e.g. fBodyBodyGyroMag-mean();	fBodyGyroMag-mean())
+- replace names with "_std" at end, with "StdDev"  (e.g. fBodyBodyGyroMag-std;	fBodyBodyGyroMagStdDev)
+- replace names with "_mean", with "Mean"  (e.g. tBodyAcc-mean()-Y; 	tBodyAccMean()-Y)
+- replace names with "AccMag", with "AccMagnitude"  (e.g. tBodyAccMag-mean();	tBodyAccMagnitude-mean())
+- replace names with "JerkMag", with "JerkMagnitude" (e.g. tBodyAccJerkMag-mean();	tBodyAccJerkMagnitude-mean())
+- replace names with "GyroMag", with "GyroMagnitude" (e.g. tBodyGyroMag-mean();	tBodyGyroMagnitude-mean())
+
+
 
 #### -From the previous data set, creates a second, independent tidy data set
 #### -Group the data by activity and subjectID
