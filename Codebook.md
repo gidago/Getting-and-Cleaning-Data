@@ -47,8 +47,6 @@ Short, high-level description of what the cleaning script does. [link to the rea
 - Dimensions of the dataset: 180 obs. of  81 variables
 - Variables present in the dataset
 
-
-
 [ 1] "activity"                         
 [ 2] "subjectID"                        
 [ 3] "timeBodyAccMean_X"                
@@ -128,22 +126,20 @@ Short, high-level description of what the cleaning script does. [link to the rea
 [77] "freqBodyGyroMagnitudeStdDev"      
 [78] "freqBodyGyroMagnitudeMeanFreq"    
 [79] "freqBodyGyroJerkMagnitudeMean"
-
 [80] "freqBodyGyroJerkMagnitudeStdDev"  
 [81] "freqBodyGyroJerkMagnitudeMeanFreq"
 
 ###activity (repeat this section for all variables in the dataset)
-Short description of what the variable describes.
+One of the six activities conducted by volunteers.
  
-Some information on the variable including:
 - Factor w/ 6 levels
 - Levels of the variable:
- 1. WALKING                                             
- 2. WALKING_UPSTAIRS                                    
- 3. WALKING_DOWNSTAIRS                                
- 4. SITTING                                         
- 5. STANDING                                       
- 6. LAYING     
+     1. WALKING                                             
+     2. WALKING_UPSTAIRS                                    
+     3. WALKING_DOWNSTAIRS                                
+     4. SITTING                                         
+     5. STANDING                                       
+     6. LAYING     
 - Unique values/levels of the variable
 - Unit of measurement (if no unit of measurement list this as well)
 - In case names follow some schema, describe how entries were constructed (for example time-body-gyroscope-z has 4 levels of descriptors. Describe these 4 levels).
