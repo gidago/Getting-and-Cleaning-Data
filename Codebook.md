@@ -134,9 +134,9 @@ One of the six activities conducted by volunteers.
  
 - Factor w/ 6 levels
 - Levels of the variable:
- 1 WALKING                                             
- 2 WALKING_UPSTAIRS                                    
-3 WALKING_DOWNSTAIRS                                
+1.  WALKING                                             
+2.  WALKING_UPSTAIRS                                    
+3.  WALKING_DOWNSTAIRS                                
 4 SITTING                                         
 5 STANDING                                       
 6 LAYING     
