@@ -57,10 +57,9 @@ Now we get the data set **dataMerged**, joining by columns subject_id, y, and X_
 
 #### -Uses descriptive activity names to name the activities in the data set
 With the following statement we change the numbers in the column activity by meaning
+
  `dataMerged$activity <- factor(dataMerged$activity, levels=activity.labels[[1]],
  labels=as.character(activity.labels[[2]]))`
-
-`unzip`
 
 #### -Label the data set with descriptive variable names
 
